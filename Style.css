@@ -1,0 +1,309 @@
+.header{
+	display: flex;
+	height: 120px;
+	background-color: #5249aa;
+	background: linear-gradient(to right, #08011a, #5249aa);
+	justify-content: start;
+	align-content: center;
+}	
+.logo{
+	
+	height: 100%;
+}
+.logo__image{
+	display: block;
+	padding: 10px 0px 0px 10px	;
+	height: 90%;
+}
+.title{
+	padding-top: 18px;
+	padding-left: 20px;
+	/*font-size: 66px;*/
+	font-size: 3.5vw;
+	color: white;
+	height: auto;
+	
+	text-align: bottom;
+}
+.main{
+	min-height: 77vh;
+	background-color: #e3ebec;
+	height: auto;
+	padding-bottom: 100px;
+	font-size: 20px;
+}
+
+.head{
+	padding-top: 20px;
+	margin: 0px 0px 0px -60px;
+}
+.head2{
+	margin: 0px 0px 0px -40px;
+}
+a{
+	color: #170249;
+	text-decoration: none;
+}
+ol{
+	padding: 0px 0px 0px 70px;
+	margin: 0px;
+}
+li{
+	font-size: 17px;
+}
+
+.alert{
+	text-decoration: underline;
+	font-size: 17px;
+	color:crimson;
+}
+
+h2{
+	padding-top: 10px;
+	margin: 0px;
+	padding-left: 15px;
+}
+h3{
+	padding-top: 10px;
+	margin: 0px;
+	padding-left: 25px;
+}
+h4{
+	padding-top: 10px;
+	margin: 0px;
+	padding-left: 10px;
+}
+p{
+	padding-left: 10px;
+	font-size: 18px;
+}
+
+.makeItGreen{
+	color: #015a10;
+}
+.makeItBig{
+	font-size: 27px;
+	font-weight: bold;
+}
+.paragraf{
+	font-size: 20px;
+	margin: 0px;
+	padding-left: 40px;
+}
+.minititle{
+	color:darkblue;
+	padding-left: 30px;
+}
+.table{
+	padding-left: 18vw;
+	text-align: center;
+	width: 65vw;
+}
+.comment{
+	width: 100vw;
+	background-color: #b5c2c4;
+	color: #09011f;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+.comment-content{
+	padding-left: 60px;
+}
+
+.iscl{
+	width: 100vw;
+	background-color: #b68383;
+	color: #09011f;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+.iscl-content{
+	padding-left: 60px;
+}
+.makeItGrey{
+	color:  rgb(66, 66, 66);
+	font-style: italic;
+}
+.slov{
+	width: 100vw;
+	background-color: #ccba81;
+	color: #09011f;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+.slov-content{
+	padding-left: 60px;
+}
+
+td{
+	text-align: center;
+	font-size: 20px;
+}
+
+td,th {
+	min-width: 3em; /* the normal 'fixed' width */
+	width: 3em; /* the normal 'fixed' width */
+	max-width: 3em; /* the normal 'fixed' width, to stop the cells expanding */
+  }
+
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+	position: relative; /* opinion 1 */
+  }
+  
+  /* Applies to all tooltips */
+  [tooltip]::before,
+  [tooltip]::after {
+	text-transform: none; /* opinion 2 */
+	font-size: .9em; /* opinion 3 */
+	line-height: 1;
+	user-select: none;
+	pointer-events: none;
+	position: absolute;
+	display: none;
+	opacity: 0;
+  }
+  [tooltip]::before {
+	content: '';
+	border: 5px solid transparent; /* opinion 4 */
+	z-index: 1001; /* absurdity 1 */
+  }
+  [tooltip]::after {
+	content: attr(tooltip); /* magic! */
+	
+	/* most of the rest of this is opinion */
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+	
+	/* 
+	  Let the content set the size of the tooltips 
+	  but this will also keep them from being obnoxious
+	  */
+	min-width: 3em;
+	max-width: 21em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 1ch 1.5ch;
+	border-radius: .3ch;
+	background: rgb(119, 3, 3);
+	color: #fff;
+	z-index: 1000; /* absurdity 2 */
+  }
+  
+  /* Make the tooltips respond to hover */
+  [tooltip]:hover::before,
+  [tooltip]:hover::after {
+	display: block;
+  }
+  
+  /* don't show empty tooltips */
+  [tooltip='']::before,
+  [tooltip='']::after {
+	display: none !important;
+  }
+  
+  /* FLOW: UP */
+  [tooltip]:not([flow])::before,
+  [tooltip][flow^="up"]::before {
+	bottom: 100%;
+	border-bottom-width: 0;
+	border-top-color: #333;
+  }
+  [tooltip]:not([flow])::after,
+  [tooltip][flow^="up"]::after {
+	bottom: calc(100% + 5px);
+  }
+  [tooltip]:not([flow])::before,
+  [tooltip]:not([flow])::after,
+  [tooltip][flow^="up"]::before,
+  [tooltip][flow^="up"]::after {
+	left: 50%;
+	transform: translate(-50%, -.5em);
+  }
+  
+  /* FLOW: DOWN */
+  [tooltip][flow^="down"]::before {
+	top: 100%;
+	border-top-width: 0;
+	border-bottom-color: #333;
+  }
+  [tooltip][flow^="down"]::after {
+	top: calc(100% + 5px);
+  }
+  [tooltip][flow^="down"]::before,
+  [tooltip][flow^="down"]::after {
+	left: 50%;
+	transform: translate(-50%, .5em);
+  }
+  
+  /* FLOW: LEFT */
+  [tooltip][flow^="left"]::before {
+	top: 50%;
+	border-right-width: 0;
+	border-left-color: #333;
+	left: calc(0em - 5px);
+	transform: translate(-.5em, -50%);
+  }
+  [tooltip][flow^="left"]::after {
+	top: 50%;
+	right: calc(100% + 5px);
+	transform: translate(-.5em, -50%);
+  }
+  
+  /* FLOW: RIGHT */
+  [tooltip][flow^="right"]::before {
+	top: 50%;
+	border-left-width: 0;
+	border-right-color: #333;
+	right: calc(0em - 5px);
+	transform: translate(.5em, -50%);
+  }
+  [tooltip][flow^="right"]::after {
+	top: 50%;
+	left: calc(100% + 5px);
+	transform: translate(.5em, -50%);
+  }
+  
+  /* KEYFRAMES */
+  @keyframes tooltips-vert {
+	to {
+	  opacity: .9;
+	  transform: translate(-50%, 0);
+	}
+  }
+  
+  @keyframes tooltips-horz {
+	to {
+	  opacity: .9;
+	  transform: translate(0, -50%);
+	}
+  }
+  
+  /* FX All The Things */ 
+  [tooltip]:not([flow]):hover::before,
+  [tooltip]:not([flow]):hover::after,
+  [tooltip][flow^="up"]:hover::before,
+  [tooltip][flow^="up"]:hover::after,
+  [tooltip][flow^="down"]:hover::before,
+  [tooltip][flow^="down"]:hover::after {
+	animation: tooltips-vert 300ms ease-out forwards;
+  }
+  
+  [tooltip][flow^="left"]:hover::before,
+  [tooltip][flow^="left"]:hover::after,
+  [tooltip][flow^="right"]:hover::before,
+  [tooltip][flow^="right"]:hover::after {
+	animation: tooltips-horz 300ms ease-out forwards;
+  }
+  
